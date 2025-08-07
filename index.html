@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פק"ל ניווט</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+    <!-- מסך פתיחה (אינטרו) -->
+    <div id="intro-screen">
+        <div class="intro-content">
+            <h1>ברוך הבא לפק"ל ניווט</h1>
+            <p>מחשבון זמנים, טבלת שליחים ושיתוף מהיר</p>
+            <button id="start-btn">התחל</button>
+        </div>
+    </div>
+
+    <!-- אזור האתר הראשי -->
+    <div id="main-content" class="hidden">
+
+        <!-- מחשבון ניווט -->
+        <section id="calculator">
+            <h2>מחשבון זמן הגעה</h2>
+            <label>מרחק (ק"מ): <input type="number" step="0.1" id="distance"></label>
+            <label>מהירות (קמ"ש): <input type="number" step="0.1" id="speed"></label>
+            <label>תוספת זמן (דקות): <input type="number" id="extra-time"></label>
+            <label>שעת יציאה: <input type="time" id="start-time"></label>
+            <label>סוג חוליה:
+                <select id="team-type">
+                    <option value="רגילה">רגילה</option>
+                    <option value="מהירה">מהירה</option>
+                    <option value="איטית">איטית</option>
+                </select>
+            </label>
+            <button id="calculate-btn">חשב</button>
+            <p id="result"></p>
+            <button id="share-btn" class="hidden">שתף בוואטסאפ</button>
+        </section>
+
+        <!-- טבלת היסטוריית שליחים -->
+        <section id="history">
+            <h2>היסטוריית שליחים</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>שם שליח</th>
+                        <th>מרחק</th>
+                        <th>מהירות</th>
+                        <th>שעת יציאה</th>
+                        <th>זמן הגעה</th>
+                        <th>פעולות</th>
+                    </tr>
+                </thead>
+                <tbody id="history-table"></tbody>
+            </table>
+            <button id="clear-history">נקה היסטוריה</button>
+        </section>
+
+        <!-- פופאפ מצפן -->
+        <div id="compass-popup" class="hidden">
+            <div class="compass-content">
+                <span id="close-compass">&times;</span>
+                <h3>מצפן</h3>
+                <img src="compass.png" alt="מצפן" class="compass-img">
+            </div>
+        </div>
+
+        <!-- לודינג -->
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>
