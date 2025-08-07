@@ -1,8 +1,0 @@
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(to bottom, #001f3f, #0074D9);
-  color: white;
-  text-align: center;
-}
-.hidden { display: none; }
