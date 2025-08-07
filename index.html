@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מחשב זמן ניווט</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+    <div id="intro-screen" class="intro">
+        <h1>ברוך הבא למחשב הניווט</h1>
+        <button onclick="hideIntro()">התחל</button>
+    </div>
+    <main id="app" style="display:none;">
+        <h2>מחשב זמן ניווט</h2>
+        <input type="number" id="distance" placeholder="מרחק בק״מ">
+        <input type="time" id="startTime" placeholder="שעת התחלה">
+        <input type="number" id="extraTime" placeholder="תוספת זמן (בדקות)" value="0">
+        <select id="timeOfDay">
+            <option value="day">יום</option>
+            <option value="night">לילה</option>
+        </select>
+        <button onclick="calculate()">חשב</button>
+        <p id="result"></p>
+        <button onclick="share()">שתף בוואטסאפ</button>
+        <hr>
+        <h3>היסטוריית שליחים</h3>
+        <table id="historyTable">
+            <thead><tr><th>מרחק</th><th>שעה</th><th>תוספת</th><th>מהירות</th><th>הגעה</th><th>מחק</th></tr></thead>
+            <tbody></tbody>
+        </table>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
