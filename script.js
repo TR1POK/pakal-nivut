@@ -148,3 +148,9 @@ function shareWhatsApp(r){
   ].join('\\n');
   window.open(`https://wa.me/?text=${encodeURIComponent(t)}`,'_blank');
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('startBtn');
+  console.log('Start button:', btn); // בדוק אם הוא לא null
+  if (btn) btn.addEventListener('click', startApp, { passive:true });
+});
