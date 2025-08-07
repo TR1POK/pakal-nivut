@@ -86,6 +86,17 @@ function calculate() {
     shareBtn.disabled = false;
     shareBtn.onclick = () => shareWhatsApp(row);
   }
+
+  // ===== ניקוי הטופס אחרי חישוב =====
+  document.getElementById('unit').value = '';
+  document.getElementById('name').value = '';
+  document.getElementById('distance').value = '';
+  document.getElementById('speed').value = '';
+  document.getElementById('startTime').value = '';
+  document.getElementById('extra').value = '0';
+  document.getElementById('extraToggle').checked = false;
+  document.getElementById('extra').disabled = true;
+  document.getElementById('unit').focus();
 }
 
 // ===== Show Result =====
@@ -130,7 +141,7 @@ function shareWhatsApp(r) {
 
 // ===== DOM Ready =====
 document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('start-button'); // ← תואם ל־HTML
+  const btn = document.getElementById('start-button');
   if (btn) btn.addEventListener('click', startApp, { passive: true });
 
   const extraToggle = document.getElementById('extraToggle');
