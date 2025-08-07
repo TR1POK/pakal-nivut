@@ -1,68 +1,56 @@
-<!doctype html>
-<html lang="he" dir="rtl">
+<!DOCTYPE html>
+<html lang="he">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
   <title>פק"ל ניווט</title>
-  <link rel="icon" href="favicon.png" />
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- שכבת אינטרו -->
-  <section id="intro" aria-label="מסך פתיחה">
-    <div class="intro-card">
-      <img class="intro-logo" src="compass.png" alt="" />
-      <h1>פק"ל ניווט</h1>
-      <p>מחשב הגעה לפי מרחק, מהירות ותוספת זמן.</p>
-      <button id="startBtn" type="button" class="btn btn-primary">התחל</button>
+  <div id="intro">
+    <h1>ברוך הבא</h1>
+    <button id="startBtn">התחל</button>
+  </div>
+
+  <div id="app" hidden>
+    <div class="clock">השעה: <span id="currentTime"></span></div>
+
+    <form>
+      <label>חוליה: <input id="unit" type="text"></label>
+      <label>שם: <input id="name" type="text"></label>
+      <label>מרחק (ק"מ): <input id="distance" type="number" step="0.1"></label>
+      <label>מהירות (קמ"ש): <input id="speed" type="number" step="0.1"></label>
+      <label>יציאה (שעה): <input id="startTime" type="time"></label>
+
+      <label>
+        <input type="checkbox" id="extraToggle"> תוספת זמן
+        <input type="number" id="extra" value="0" disabled> דקות
+      </label>
+
+      <button type="button" id="calc">חשב</button>
+    </form>
+
+    <div id="result"></div>
+    <button id="share" disabled>שתף בוואטסאפ</button>
+
+    <div>
+      <button id="toggleTable">הצג/הסתר טבלה</button>
+      <button id="clearTable">נקה טבלה</button>
     </div>
-  </section>
 
-  <!-- האפליקציה -->
-  <main id="app" hidden>
-    <header class="topbar">
-      <div class="now">שעה נוכחית: <span id="currentTime">--:--:--</span></div>
-    </header>
+    <div id="tableWrap">
+      <table id="historyTable">
+        <thead>
+          <tr>
+            <th>חוליה</th><th>שם</th><th>מרחק</th>
+            <th>מהירות</th><th>תוספת</th><th>יציאה</th><th>הגעה</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
 
-    <section class="card">
-      <h2>נתוני משימה</h2>
-      <div class="grid">
-        <label>אורך ציר (בק"מ): <input id="distance" type="number" step="0.1" inputmode="decimal"></label>
-        <label>מהירות (קמ"ש • ריק=אוטומטי): <input id="speed" type="number" step="0.1" inputmode="decimal" placeholder="4 ביום / 2.5 בלילה"></label>
-        <label class="row">
-          <input id="extraToggle" type="checkbox">
-          <span>הוספת זמן (דקות):</span>
-          <input id="extra" type="number" step="1" inputmode="numeric" value="0" disabled>
-        </label>
-        <label>חוליה: <input id="unit" type="text" placeholder="מס׳/שם"></label>
-        <label>שם המנווט: <input id="name" type="text" placeholder="שם מלא"></label>
-        <label>שעת יציאה: <input id="startTime" type="time"></label>
-      </div>
-
-      <div class="actions">
-        <button id="calc" class="btn btn-primary">חשב זמן הגעה</button>
-        <button id="share" class="btn btn-wa" disabled>שיתוף לוואטסאפ</button>
-        <button id="toggleTable" class="btn">טבלת שליחים</button>
-        <button id="clearTable" class="btn btn-danger">נקה טבלה</button>
-      </div>
-
-      <p id="result" class="result"></p>
-
-      <div id="tableWrap" class="table-wrap" hidden>
-        <div class="table-scroll">
-          <table id="historyTable">
-            <thead>
-              <tr>
-                <th>חוליה</th><th>שם</th><th>מרחק</th><th>מהירות</th><th>תוספת</th><th>יציאה</th><th>הגעה</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-  </main>
+  <script src="script.js"></script>
 </body>
 </html>
