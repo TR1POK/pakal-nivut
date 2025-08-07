@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8">
+  <title>פק"ל ניווט</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.png">
+</head>
+<body>
+  <div id="intro">ברוך הבא לנווט</div>
+  <main>
+    <!-- מחשבון ניווט -->
+    <input id="distance" placeholder="מרחק בק״מ">
+    <input id="speed" placeholder="מהירות בקמ״ש">
+    <input id="startTime" placeholder="שעת יציאה">
+    <button onclick="calculate()">חשב</button>
+    <div id="result"></div>
+
+    <!-- טבלת שליחים -->
+    <table id="history"><thead><tr><th>שם</th><th>מרחק</th><th>הגעה</th></tr></thead><tbody></tbody></table>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
