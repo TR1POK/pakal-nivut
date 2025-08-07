@@ -130,7 +130,7 @@ function shareWhatsApp(r) {
 
 // ===== DOM Ready =====
 document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('startBtn');
+  const btn = document.getElementById('start-button'); // ← תוקן כאן
   if (btn) btn.addEventListener('click', startApp, { passive: true });
 
   const extraToggle = document.getElementById('extraToggle');
