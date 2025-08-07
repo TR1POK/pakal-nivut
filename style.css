@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.intro-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #000;
+  color: white;
+}
+
+input, button {
+  display: block;
+  margin: 10px auto;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid white;
+}
